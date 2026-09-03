@@ -276,8 +276,10 @@
       tick("lesson", l.id, on, l.t) +
       '<button class="ttl" data-action="expand" data-id="' + l.id + '" aria-expanded="false">' + esc(l.t) + "</button>" +
       '<span class="pill ' + l.lvl + '" title="' + LVL[l.lvl] + '">' + l.lvl + "</span></div>";
-    h += '<div class="detail" hidden data-detail="' + l.id + '"><ul>' +
-      l.k.map(function (b) { return "<li>" + esc(b) + "</li>"; }).join("") + "</ul>" +
+    h += '<div class="detail" hidden data-detail="' + l.id + '">' +
+      (l.f ? '<div class="formula"><span class="tagline">Formula</span>' + esc(l.f) + "</div>" : "") +
+      "<ul>" + l.k.map(function (b) { return "<li>" + esc(b) + "</li>"; }).join("") + "</ul>" +
+      (l.ex ? '<div class="worked"><span class="tagline">Worked example</span>' + esc(l.ex) + "</div>" : "") +
       '<div class="doline"><b>Do this</b> — ' + esc(l.do) + "</div>" +
       '<textarea data-action="note" data-id="' + l.id + '" placeholder="Your note: where this bites in your own estate">' + esc(note) + "</textarea>" +
       '<div class="row" style="margin-top:9px"><button class="btn sm" data-action="ask" data-id="' + l.id + '">Ask about this</button>' +
@@ -337,6 +339,26 @@
       by[k].forEach(function (x) { h += lessonHTML(x); });
       h += "</div>";
     });
+    return h;
+  }
+
+  function vFormulas() {
+    var rows = LESSONS.filter(function (x) { return x.l.f; });
+    var q = query.trim().toLowerCase();
+    var h = '<div class="pagehd"><h1>Formula sheet</h1><p>Every formula in the curriculum on one page, with its worked example. ' + rows.length + ' entries. Tick marks carry over from the lessons.</p></div>';
+    var by = {};
+    rows.forEach(function (x) { (by[x.m.name] = by[x.m.name] || []).push(x); });
+    Object.keys(by).forEach(function (k) {
+      h += '<div class="card block"><div class="cardhd"><h3>' + esc(k) + '</h3><span class="faint">' + by[k].length + " formulas</span></div>" +
+        '<div class="tblwrap"><table><thead><tr><th style="width:24%">Metric</th><th style="width:38%">Formula</th><th>Worked example</th></tr></thead><tbody>';
+      by[k].forEach(function (x) {
+        var on = !!S.done[x.l.id];
+        h += "<tr" + (on ? ' style="opacity:.55"' : "") + "><td><strong>" + esc(x.l.t) + '</strong> <span class="pill ' + x.l.lvl + '">' + x.l.lvl + "</span></td>" +
+          '<td class="fx">' + esc(x.l.f) + '</td><td class="w">' + esc(x.l.ex || "") + "</td></tr>";
+      });
+      h += "</tbody></table></div></div>";
+    });
+    if (!rows.length) h += '<div class="empty">No formulas found.</div>';
     return h;
   }
 
@@ -438,6 +460,7 @@
     overview: { label: "Overview", fn: vOverview },
     ladder: { label: "Ladder", fn: vLadder },
     finance: { label: "Finance", fn: function () { return vTrack(TRACKS.finance); } },
+    formulas: { label: "Formula sheet", fn: vFormulas },
     tech: { label: "Technology", fn: function () { return vTrack(TRACKS.tech); } },
     progress: { label: "Progress", fn: vProgress },
     settings: { label: "Settings", fn: vSettings },
@@ -457,10 +480,10 @@
   function navHTML() {
     var groups = [
       ["Track", ["overview", "ladder", "progress"]],
-      ["Curriculum", ["finance", "tech"]],
+      ["Curriculum", ["finance", "tech", "formulas"]],
       ["", ["settings"]]
     ];
-    var pcts = { overview: overall() + "%", ladder: readiness() + "%", finance: trackStats(TRACKS.finance).pct + "%", tech: trackStats(TRACKS.tech).pct + "%", progress: "", settings: "" };
+    var pcts = { overview: overall() + "%", ladder: readiness() + "%", finance: trackStats(TRACKS.finance).pct + "%", tech: trackStats(TRACKS.tech).pct + "%", formulas: "", progress: "", settings: "" };
     var h = "";
     groups.forEach(function (grp) {
       if (grp[0]) h += '<div class="railgroup">' + grp[0] + "</div>";

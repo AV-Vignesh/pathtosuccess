@@ -361,3 +361,23 @@ td.w { color: var(--text-2); }
   body { background: #fff; color: #000; }
   .wrap { padding: 0; }
 }
+
+/* ---------- formula + worked example ---------- */
+.tagline {
+  display: block; font-size: calc(10.5px * var(--fs)); font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-3);
+  margin-bottom: 4px;
+}
+.formula {
+  font-family: var(--mono); font-size: calc(12.5px * var(--fs)); line-height: 1.6;
+  background: var(--page); border: 1px solid var(--line-2); border-radius: var(--r-sm);
+  padding: 10px 12px; margin: 0 0 12px; color: var(--text); max-width: 76ch;
+  overflow-x: auto;
+}
+.formula .tagline { font-family: var(--ui); color: var(--accent); }
+.worked {
+  background: var(--raise); border: 1px solid var(--line); border-radius: var(--r-sm);
+  padding: 10px 12px; margin: 0 0 12px; max-width: 76ch;
+  font-size: calc(13px * var(--fs)); color: var(--text-2);
+}
+td.fx { font-family: var(--mono); font-size: calc(11.5px * var(--fs)); color: var(--text); line-height: 1.55; }
