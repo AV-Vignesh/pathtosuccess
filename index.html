@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="paper" data-font="sans" data-density="normal" data-motion="on">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CTO Track — engineering leadership curriculum and evidence ledger</title>
+<meta name="description" content="A curriculum and evidence tracker for engineers working toward technology executive roles in IT services firms. Finance, ERP, technology breadth, and a ladder of verifiable gates.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="side" id="side" data-collapsed="false">
+    <div class="brand">
+      <div>
+        <div class="mark">Engineering leadership</div>
+        <h1>CTO Track</h1>
+      </div>
+      <button class="btn small burger" data-action="burger" aria-label="Toggle navigation">Menu</button>
+    </div>
+    <nav class="nav" id="nav" aria-label="Sections"></nav>
+    <div class="side-foot">
+      <p class="meta" id="stamp"></p>
+      <p class="meta">Progress is stored in this browser only. Export from the Progress view once a month.</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <input type="search" id="q" placeholder="Search lessons" aria-label="Search lessons">
+      <button class="btn small" data-action="askopen">Ask</button>
+    </div>
+    <div class="wrap">
+      <div id="viewhost"></div>
+    </div>
+
+    <section class="drawer" id="drawer" hidden aria-label="AI tutor">
+      <div class="inner">
+        <div class="row" style="justify-content:space-between">
+          <strong>Tutor</strong>
+          <button class="btn small" data-action="askclose">Close</button>
+        </div>
+        <p class="meta" id="askctx"></p>
+        <textarea id="askq" placeholder="Ask about a concept, or paste a situation from your own work"></textarea>
+        <div class="row" style="margin-top:10px">
+          <button class="btn primary" data-action="asksend">Send</button>
+          <span class="meta">Needs an API key, set in Settings.</span>
+        </div>
+        <div class="out" id="askout"></div>
+      </div>
+    </section>
+  </main>
+
+</div>
+
+<script src="content/ladder.js"></script>
+<script src="content/finance.js"></script>
+<script src="content/tech.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
