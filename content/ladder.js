@@ -1,0 +1,171 @@
+/* Ladder model for the CTO track inside a large IT services / consulting firm.
+   Deliberately generic: no employer, client or colleague names. */
+window.LADDER = {
+  note: "In a services firm the CTO job is not the biggest engineer. It is technical authority attached to revenue: pre-sales credibility, capability building, partner leverage, reusable IP, and talent supply at scale. The gates below are ordered by what each one forces you to learn, not by title.",
+  stages: [
+    {
+      id: "s1",
+      n: "01",
+      title: "Authority beyond your own team",
+      from: "Senior technical lead",
+      to: "Architect / principal engineer",
+      shift: "You stop being measured by what your team ships and start being measured by decisions other teams inherit.",
+      gates: [
+        { id: "s1g1", t: "Own an architecture that spans three or more teams you do not manage" },
+        { id: "s1g2", t: "Approve or reject designs you did not write, in writing, with reasoning" },
+        { id: "s1g3", t: "Publish a standard or reference pattern that a different unit adopts" },
+        { id: "s1g4", t: "Chair a recurring design review with attendance outside your reporting line" },
+        { id: "s1g5", t: "Take two leads from supervised to independent delivery" },
+        { id: "s1g6", t: "Be the named escalation point for one production category, on record" },
+        { id: "s1g7", t: "Write one decision record that reverses a popular choice, and hold the line" }
+      ],
+      signals: ["Architects in other units ask you before deciding", "Your name appears on estimates you did not request", "You are pulled into reviews as a neutral party"]
+    },
+    {
+      id: "s2",
+      n: "02",
+      title: "Own a capability, not a project",
+      from: "Architect / engineering manager",
+      to: "Capability or practice lead",
+      shift: "A project ends. A capability has an offering, a staffing model, a cost base and a market. Most careers stall here because the work stops being technical.",
+      gates: [
+        { id: "s2g1", t: "Define one service offering: scope, deliverables, staffing pyramid, price inputs" },
+        { id: "s2g2", t: "Build a reusable accelerator that bills on two or more engagements" },
+        { id: "s2g3", t: "Own the hiring plan and interview loop for one skill family" },
+        { id: "s2g4", t: "Own a budget line and explain its variance to someone senior" },
+        { id: "s2g5", t: "Carry a utilization or gross-margin number for a quarter" },
+        { id: "s2g6", t: "Take a hyperscaler or ISV specialization from application to award" },
+        { id: "s2g7", t: "Run a capability skills matrix and close one named gap with hiring or training" },
+        { id: "s2g8", t: "Kill an initiative you sponsored, and publish why" }
+      ],
+      signals: ["Sales asks for your offering by name", "Your accelerator appears in someone else's proposal", "You are asked to staff, not to code"]
+    },
+    {
+      id: "s3",
+      n: "03",
+      title: "Commercial ownership",
+      from: "Capability lead",
+      to: "Director / AVP technology",
+      shift: "The gate almost nobody engineers-turned-leaders clear. You become accountable for revenue you influenced and margin you protected, with your own numbers reported upward.",
+      gates: [
+        { id: "s3g1", t: "Lead the technical win on a competitive deal above one million in contract value" },
+        { id: "s3g2", t: "Own a portfolio P&L: revenue, cost, margin, forecast" },
+        { id: "s3g3", t: "Price a deal end to end, including risk contingency, and defend the margin" },
+        { id: "s3g4", t: "Set an annual capability roadmap with an investment ask, and get it funded" },
+        { id: "s3g5", t: "Manage three or more managers, including one you did not hire" },
+        { id: "s3g6", t: "Recover one red account: diagnosis, plan, client sign-off, closure" },
+        { id: "s3g7", t: "Run one performance exit fairly and lawfully, start to finish" },
+        { id: "s3g8", t: "Own delivery assurance across accounts you do not run day to day" },
+        { id: "s3g9", t: "Present a forecast that you later miss, and explain the variance without excuses" }
+      ],
+      signals: ["Finance sends you the numbers before the review", "Account leads negotiate with you, not around you", "You are asked which deals to walk away from"]
+    },
+    {
+      id: "s4",
+      n: "04",
+      title: "Technology leadership for a business unit",
+      from: "Director / AVP",
+      to: "VP engineering / business-unit CTO",
+      shift: "You now sell the firm's technical point of view to people who can replace it. The audience is client executives, partner executives and analysts, not engineers.",
+      gates: [
+        { id: "s4g1", t: "Own the technology strategy for one vertical or geography, written and circulated" },
+        { id: "s4g2", t: "Hold a standing relationship with a client CIO or CTO through one full contract cycle" },
+        { id: "s4g3", t: "Own an alliance relationship at partner-executive level, with joint goals" },
+        { id: "s4g4", t: "Decide build versus buy versus partner on something expensive, and own the outcome" },
+        { id: "s4g5", t: "Take one internal asset to a productized, licensable or repeatable form" },
+        { id: "s4g6", t: "Brief an industry analyst or complete a major analyst evaluation response" },
+        { id: "s4g7", t: "Own security, privacy and compliance posture for the unit, including one audit" },
+        { id: "s4g8", t: "Speak at an external industry conference on the firm's technical position" },
+        { id: "s4g9", t: "Turn around one capability that is losing money or relevance" }
+      ],
+      signals: ["Clients request you in pursuit teams by name", "Partners route co-sell through you", "Your written point of view is quoted back to you"]
+    },
+    {
+      id: "s5",
+      n: "05",
+      title: "Office of the CTO",
+      from: "Business-unit CTO",
+      to: "Chief technology officer",
+      shift: "Your product is the firm's technical direction and its ability to staff it. You are judged on bets placed years earlier and on what you stopped.",
+      gates: [
+        { id: "s5g1", t: "Set firmwide technology bets, with an explicit kill list, and publish both" },
+        { id: "s5g2", t: "Own enterprise architecture and engineering standards across business units" },
+        { id: "s5g3", t: "Own an innovation or R&D budget and its return, measured" },
+        { id: "s5g4", t: "Report technology strategy to the executive committee or board" },
+        { id: "s5g5", t: "Own the talent strategy for a four-figure engineering population" },
+        { id: "s5g6", t: "Run technical due diligence on an acquisition, and the integration after it" },
+        { id: "s5g7", t: "Represent the firm publicly as its technical voice, repeatedly, on the record" },
+        { id: "s5g8", t: "Survive one wrong firmwide bet: own it, correct it, keep credibility" }
+      ],
+      signals: ["Business units argue their case to you rather than around you", "Partners treat the relationship as strategic, not transactional", "The market associates a technical position with the firm"]
+    }
+  ],
+  competencies: [
+    { id: "c1", name: "Architecture authority", desc: "Decisions others inherit, standards others follow, tradeoffs you can defend without slides." },
+    { id: "c2", name: "Delivery and assurance", desc: "Predictability across work you do not personally run. Recovery of things already broken." },
+    { id: "c3", name: "Commercial and pricing", desc: "Revenue influenced, margin protected, deals priced and defended." },
+    { id: "c4", name: "Org building and talent", desc: "Hiring, levelling, growing managers, and removing people fairly when required." },
+    { id: "c5", name: "Client executive presence", desc: "Credibility with people who buy, in their language, under pressure." },
+    { id: "c6", name: "Partner and alliance strategy", desc: "Hyperscaler and ISV leverage: competencies, co-sell, funding, roadmap access." },
+    { id: "c7", name: "IP and productization", desc: "Turning delivery work into reusable, billable, defensible assets." },
+    { id: "c8", name: "Market and analyst credibility", desc: "External proof that the firm's technical position exists outside its own decks." },
+    { id: "c9", name: "Risk, security and compliance", desc: "Posture, audits, contractual obligations, and the cost of getting them wrong." },
+    { id: "c10", name: "Innovation and AI strategy", desc: "Placing bets with uncertain payoff, funding them, and killing them on time." }
+  ],
+  evidence: [
+    { id: "e1", c: "c1", t: "Signed architecture for a multi-team platform", how: "Diagram plus decision record with rejected options" },
+    { id: "e2", c: "c1", t: "Standard adopted outside your unit", how: "Link to the standard and one adopting team" },
+    { id: "e3", c: "c1", t: "Design review you chair, with minutes", how: "Six months of records" },
+    { id: "e4", c: "c1", t: "A reversal you argued for and won", how: "Written rationale and the outcome twelve months later" },
+    { id: "e5", c: "c2", t: "Delivery metrics for a portfolio you do not run", how: "Trend on schedule, defect escape, incident rate" },
+    { id: "e6", c: "c2", t: "One recovered account", how: "Before-and-after state, client confirmation" },
+    { id: "e7", c: "c2", t: "An assurance framework you authored", how: "Checklist plus evidence it caught something" },
+    { id: "e8", c: "c2", t: "A major incident you owned end to end", how: "Timeline, postmortem, closed actions" },
+    { id: "e9", c: "c3", t: "Deal you were named technical lead on", how: "Value, outcome, your specific contribution" },
+    { id: "e10", c: "c3", t: "A P&L line you owned for four quarters", how: "Plan versus actual, with your commentary" },
+    { id: "e11", c: "c3", t: "A price you built and defended", how: "Cost model, contingency, final margin" },
+    { id: "e12", c: "c3", t: "An investment case that got funded", how: "The ask, the approval, the realised return" },
+    { id: "e13", c: "c4", t: "Hiring plan you owned and filled", how: "Roles, time to fill, retention at twelve months" },
+    { id: "e14", c: "c4", t: "Managers you developed", how: "Names withheld; roles before and after" },
+    { id: "e15", c: "c4", t: "A levelling or competency framework you wrote", how: "The framework and its adoption" },
+    { id: "e16", c: "c4", t: "A performance exit handled correctly", how: "Process followed, no legal exposure" },
+    { id: "e17", c: "c5", t: "A client CXO relationship sustained past one contract", how: "Meeting cadence, what they came to you for" },
+    { id: "e18", c: "c5", t: "A bad-news conversation you led", how: "What you told them, what happened next" },
+    { id: "e19", c: "c5", t: "A board or steering committee pack you authored", how: "The pack, scrubbed" },
+    { id: "e20", c: "c5", t: "A negotiation where you held a technical position", how: "The position and the settlement" },
+    { id: "e21", c: "c6", t: "A partner competency or specialization achieved", how: "Award date and your role in it" },
+    { id: "e22", c: "c6", t: "Co-sell or partner-funded engagement", how: "Funding secured, work delivered" },
+    { id: "e23", c: "c6", t: "Partner executive relationship", how: "Cadence and joint goals" },
+    { id: "e24", c: "c6", t: "Early access or roadmap influence", how: "Programme name, feedback you gave" },
+    { id: "e25", c: "c7", t: "An accelerator that billed twice", how: "Two engagements and the hours saved" },
+    { id: "e26", c: "c7", t: "An asset with a licence or commercial model", how: "The model and the first sale" },
+    { id: "e27", c: "c7", t: "A patent, disclosure or protected asset", how: "Filing or internal registration" },
+    { id: "e28", c: "c7", t: "A build-versus-buy decision with tracked outcome", how: "The analysis and what actually happened" },
+    { id: "e29", c: "c8", t: "External conference talk", how: "Event, title, recording or deck" },
+    { id: "e30", c: "c8", t: "Analyst briefing or evaluation response", how: "Which evaluation, your section" },
+    { id: "e31", c: "c8", t: "Published technical writing with reach", how: "Links and readership numbers" },
+    { id: "e32", c: "c8", t: "Industry recognition or program membership", how: "Award, MVP-class recognition, advisory seat" },
+    { id: "e33", c: "c9", t: "Security posture you own, scored over time", how: "Framework, scores, trend" },
+    { id: "e34", c: "c9", t: "An audit you passed as accountable owner", how: "Standard, findings, closure" },
+    { id: "e35", c: "c9", t: "A risk you escalated that was unpopular", how: "The escalation and the outcome" },
+    { id: "e36", c: "c9", t: "A contractual obligation you translated into controls", how: "Clause to control mapping" },
+    { id: "e37", c: "c10", t: "A bet you funded from nothing to production", how: "Timeline, spend, adoption" },
+    { id: "e38", c: "c10", t: "A bet you killed on schedule", how: "Kill criteria set in advance, and honoured" },
+    { id: "e39", c: "c10", t: "An adoption curve you drove, not just built", how: "Users over time, not features shipped" },
+    { id: "e40", c: "c10", t: "A cost or economics model for an emerging technology", how: "Unit economics that survived review" }
+  ],
+  gaps: [
+    { id: "g1", t: "P&L ownership", why: "Deep technical work carries no revenue accountability. This is the single most common reason architects never reach CTO in a services firm.", first: "Ask to own one cost line, however small, with variance reported by you." },
+    { id: "g2", t: "Pre-sales win record", why: "Without named deals, your commercial value is asserted rather than evidenced.", first: "Volunteer as technical lead on one pursuit, win or lose, and keep the record." },
+    { id: "g3", t: "Pricing and margin", why: "If you have never priced work, you cannot argue against a bad deal or defend a good one.", first: "Shadow one pricing exercise and rebuild the model yourself afterwards." },
+    { id: "g4", t: "Hiring and exiting at scale", why: "Building teams from a plan, and removing people fairly, are both learned by doing.", first: "Own one requisition family end to end, including rejection decisions." },
+    { id: "g5", t: "Managing managers", why: "Leading leads is not leading managers. Different failure modes, different tools.", first: "Take one lead through their first hiring and first performance conversation." },
+    { id: "g6", t: "Client executive relationships", why: "Internal credibility does not transfer. Buyers evaluate you separately.", first: "Get into one client steering committee as a speaking participant." },
+    { id: "g7", t: "Partner executive access", why: "Certifications are individual; alliances are institutional. They are not the same asset.", first: "Own one partner competency application and meet the partner's account team." },
+    { id: "g8", t: "Analyst and market exposure", why: "Analyst evaluations shape services demand more than engineering quality does.", first: "Ask to contribute one section to an analyst response." },
+    { id: "g9", t: "External speaking at industry level", why: "Blog reach is not stage credibility. Different proof, different audience.", first: "Submit one talk to a regional industry conference this cycle." },
+    { id: "g10", t: "Board-level communication", why: "Executive committees reason in capital, risk and time, not architecture.", first: "Rewrite one of your technical proposals as a one-page investment case." },
+    { id: "g11", t: "M&A technical due diligence", why: "Growth in services is partly bought. CTOs are expected to assess what is being bought.", first: "Read two public diligence checklists and apply one to your own estate." },
+    { id: "g12", t: "Losing publicly and recovering", why: "Every senior leader has a visible failure. Credibility comes from the recovery, and you cannot fake having had one.", first: "Stop hiding small misses. Report one variance before you are asked." }
+  ]
+};
