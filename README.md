@@ -42,9 +42,13 @@ Settings accepts an Anthropic API key so you can ask questions against any lesso
 
 Understand the trade-off before using it: a key used from a browser page is readable by anything running on that page and by anyone who opens developer tools. Use a personal key with a low spend limit. Do not use a shared or employer key.
 
-## Preferences
+## Interface
 
-Six themes (paper, neutral grey, blueprint, slate, ink, high contrast), five accents, four text sizes, three typefaces, three densities, reduced motion, and a focus mode that hides every percentage while you read.
+Dark product-app UI. Left rail navigation on desktop, a scrolling pill bar on mobile. The ladder is split into four tabs (gates, competencies, evidence, gaps) rather than one long scroll, and each curriculum track uses a module chip selector so you look at one module at a time instead of twelve stacked accordions.
+
+Preferences: six themes (Midnight, Graphite, Slate, Dim, Light, Contrast), seven accents, four text sizes, three typefaces, three densities, reduced motion, and a focus mode that hides every figure while you read.
+
+Charts are hand-drawn SVG — a competency radar and a snapshot trend line. No chart library.
 
 ## Content scope
 
